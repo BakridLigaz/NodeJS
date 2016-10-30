@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/services.js"></script>
+</head>
+<body class="container" ng-controller="MainCtrl">
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in listUser">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td><button class="btn btn-danger" ng-click="deleteUser(user.id)">Удалить</button></td>
+    </tr>
+</table>
+<form>
+    <input type="text" placeholder="Введите имя" ng-model="user.name"/><button class="btn btn-success" ng-click="addUser(user)" ng-disabled="!user">Добавить</button>
+</form>
+</body>
+</html>
